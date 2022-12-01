@@ -30,6 +30,7 @@ import { convertToBinary, findMin, findMin2, getNumberAtPosition, lengthNumber, 
 import { isMatch, isMatch2, letterCombinations, removeDuplicatesString } from './Algorithms/isMatch';
 import { solution } from './Algorithms/test';
 import { htmlTagConversion } from './HTMLTagConversion';
+import { assignRooms } from './RoomAssignment';
 
 // console.log(`MergeSort: ${utiliseMergeSort([2, 3, 5, 3, 1, 7, 5, 8, 4])}`);
 // console.log(`BubbleSort: ${bubbleSort([2, 4, 6, 9, 1, 7, 5, 8, 3])}`);
@@ -573,11 +574,14 @@ import { htmlTagConversion } from './HTMLTagConversion';
 
 // console.log(solution(`13 DUP 4 POP 5 DUP + DUP + -`));
 
-const htmlString1 = '<p>Sample</p>';
-const htmlString2 = '<p>Test Summary</p>';
-const htmlString3 = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p><p><br></p>';
-const htmlString4 = '<p><span style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</span></p>';
-const htmlString5 = '<p><span class="ql-cursor">﻿</span><strong>Test Title</strong></p><p><strong><em>Subtitle </em></strong></p><p><em>Information header</em></p><p><u>Note to self</u></p><ol><li>Everything</li><li>Not to say</li></ol><p><u>Note 2</u></p><ul><li>All the above</li><li>With that sail</li><li class="ql-indent-1">Never say die</li><li class="ql-indent-1">All I can say</li></ul><p><a href="https://www.google.com/" target="_blank">Link to all </a></p><p><span class="ql-size-huge">Heading 1</span></p><p><span class="ql-size-large">Subheading 2</span></p><p>Normal text</p><p><span class="ql-size-small">Hidden text</span></p>';
+// const htmlString1 = '<p>Sample</p>';
+// const htmlString2 = '<p>Test Summary</p>';
+// const htmlString3 = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p><p><br></p>';
+// const htmlString4 = '<p><span style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</span></p>';
+// const htmlString5 = '<p><span class="ql-cursor">﻿</span><strong>Test Title</strong></p><p><strong><em>Subtitle </em></strong></p><p><em>Information header</em></p><p><u>Note to self</u></p><ol><li>Everything</li><li>Not to say</li></ol><p><u>Note 2</u></p><ul><li>All the above</li><li>With that sail</li><li class="ql-indent-1">Never say die</li><li class="ql-indent-1">All I can say</li></ul><p><a href="https://www.google.com/" target="_blank">Link to all </a></p><p><span class="ql-size-huge">Heading 1</span></p><p><span class="ql-size-large">Subheading 2</span></p><p>Normal text</p><p><span class="ql-size-small">Hidden text</span></p>';
 
-const result = htmlTagConversion(htmlString5);
-console.log(result);
+// const result = htmlTagConversion(htmlString5);
+// console.log(result);
+
+assignRooms();
+

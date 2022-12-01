@@ -185,7 +185,7 @@ export function copyRandomList(head: CNode | null): CNode | null {
     previous = previous.next
     arr2.push(previous);
     arr.push(current);
-    ccurrent.next;
+    current.next;
   }
   console.log(list2);
   current = head;
