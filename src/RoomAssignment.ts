@@ -1,13 +1,17 @@
-const rooms = [1, 2, 3,5,6,7,8,9,10, 11,12,13,14,15,16,17];
-const individuals = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
+// const rooms = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,16, 17, 18, 19, 20];
+// const individuals = ["A", "B", "C", "D", "E", "F"];
 
-let individaulMaps: Map<string, number[]> = new Map();
+const rooms = ["Hall", "bath", "Kit", "Din", "Toilet", "Living"]
+const individuals = ["Ev", "Ang", "Ana", "Ch", "Oo", "Gab"]
+
+let individaulMaps: Map<string, string[]> = new Map();
 let nextAssignment = 0;
+let roomPosition = 0;
 let assignedRooms = [];
 let completelyAssigned = [];
 
 export function assignRooms() {
-  const roomAssignments: { [week: string]: Map<string, number[]> } = {};
+  const roomAssignments: { [week: string]: Map<string, string[]> } = {};
   let week = 0;
   while (week < 10) {
     const currentWeek = `Week${week}`;
@@ -24,8 +28,18 @@ export function assignRooms() {
           continue;
         }
         const currentMapped = individaulMaps.has(individuals[currentIndex]) ? individaulMaps.get(individuals[currentIndex]) : [];
+        
+        let unmappedRoom;
+        // Follow natural order of rooms
+        for (let j = 0; j < rooms.length; j++){
+          const roomIndex = (j + roomPosition) % rooms.length;
+          if (!assignedRooms.includes(rooms[roomIndex]) && !currentMapped.includes(rooms[roomIndex])) {
+            unmappedRoom = rooms[roomIndex];
+            roomPosition = (roomIndex + 1) % rooms.length;
+            break;
+          }
+        }
 
-        const unmappedRoom = rooms.find(room => !assignedRooms.includes(room) && !currentMapped.includes(room));
         if (unmappedRoom) {
           // Assign room by week
           const assignment = roomAssignments[currentWeek].has(individuals[currentIndex]) ? roomAssignments[currentWeek].get(individuals[currentIndex]) : [];
